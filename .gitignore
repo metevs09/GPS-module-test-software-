@@ -1,32 +1,17 @@
-# Prerequisites
-*.d
+// a and b constants are Tx and Rx pins 
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+void setup() {
+  // initialize both serial ports:
+  Serial.begin(9600);
+  Serial1.begin(9600);
+}
 
-# Precompiled Headers
-*.gch
-*.pch
+void loop() {
+  // read from port a, send to port b:
+  if (Serial1.available()) {
+    int inByte = Serial1.read();
+    Serial.write(inByte);
+  }
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
 
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
+}
