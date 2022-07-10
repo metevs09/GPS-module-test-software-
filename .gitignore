@@ -1,5 +1,7 @@
 // a and b constants are Tx and Rx pins 
 
+// 9600 is baundrate constant(optional changeable)
+
 void setup() {
   // initialize both serial ports:
   Serial.begin(9600);
